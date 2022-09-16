@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: bontebok-telegram-token
+type: Opaque
+stringData:
+  BONTEBOK_TELEGRAM_TOKEN: # add the private key you want to use here

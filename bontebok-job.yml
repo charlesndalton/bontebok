@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: CronJob 
+metadata:
+  name: oryx-job
+spec:
+  schedule: "@daily"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: bontebok-bot
+            image: charlesdalton/bontebok-bot:latest
+            env:
+            - name: BONTEBOK_TELEGRAM_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: bontebok-telegram-token
+                  key: BONTEBOK_TELEGRAM_TOKEN

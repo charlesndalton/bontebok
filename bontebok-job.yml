@@ -1,9 +1,9 @@
 apiVersion: batch/v1
 kind: CronJob 
 metadata:
-  name: oryx-job
+  name: bontebok-job
 spec:
-  schedule: "@daily"
+  schedule: "@weekly"
   jobTemplate:
     spec:
       template:
